@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_santa"
+        android:icon="@drawable/santa1"
+        android:title="Santa" />
+
+    <item
+        android:id="@+id/nav_bell"
+        android:icon="@drawable/bell1"
+        android:title="Bells" />
+
+    <item
+        android:id="@+id/nav_merry_christmas"
+        android:icon="@drawable/christmas"
+        android:title="Merry Christmas" />
+
+
+</menu>
