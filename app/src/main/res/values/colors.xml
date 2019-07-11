@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="transparent">#80000000</color>
+    <color name="red">#F00</color>
+    <color name="select">#ff6635</color>
+    <color name="unselect">#fff</color>
+
 </resources>

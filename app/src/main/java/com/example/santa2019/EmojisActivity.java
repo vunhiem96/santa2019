@@ -1,17 +1,15 @@
 package com.example.santa2019;
 
-import android.graphics.Typeface;
+
 import android.os.Bundle;
 import android.util.TypedValue;
-import android.view.View;
-import android.view.ViewGroup;
+
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.astuetz.PagerSlidingTabStrip;
@@ -22,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Emojis extends AppCompatActivity {
+public class EmojisActivity extends AppCompatActivity {
     ImageView imgBack;
     ViewPager viewPagerEmojis;
     TabLayout tabLayoutEmojis;
@@ -46,6 +44,7 @@ public class Emojis extends AppCompatActivity {
         pager.setAdapter(adapter);
         tabs.setViewPager(pager);
 
+
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources()
                 .getDisplayMetrics());
         pager.setPageMargin(pageMargin);
@@ -55,9 +54,9 @@ public class Emojis extends AppCompatActivity {
 
 
 
-    public class MyPagerAdapter extends FragmentPagerAdapter {
+    public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
-        private final String[] Titles = {"Christmas Emoji", "Christmas Hats", "Chrismas Santa", "Gifts", "Santa", "Sticker Merry Chrismas", "Tree Christmas", "Bells", "Ball"};
+        private final String[] Titles = {"Christmas Emoji", "Christmas Santa", "Gifts", "Santa","Balls","Sticker Merry Christmas", "Tree Christmas", "Bells", "Christmas Hats"};
 
         MyPagerAdapter(FragmentManager fm) {
             super(fm);

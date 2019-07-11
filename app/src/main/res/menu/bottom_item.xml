@@ -2,19 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_santa"
-        android:icon="@drawable/santa1"
-        android:title="Santa" />
+        android:id="@+id/nav_like"
+        android:icon="@drawable/icon_like"
+        android:title="Favorites" />
 
     <item
-        android:id="@+id/nav_bell"
+        android:id="@+id/nav_share"
         android:icon="@drawable/bell1"
-        android:title="Bells" />
+        android:title="Share" />
 
     <item
-        android:id="@+id/nav_merry_christmas"
+        android:id="@+id/nav_ring_phone"
         android:icon="@drawable/christmas"
-        android:title="Merry Christmas" />
-
+        android:title="Set Phone Ringtone" />
 
 </menu>

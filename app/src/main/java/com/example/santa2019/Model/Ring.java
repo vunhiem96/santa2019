@@ -1,49 +1,52 @@
 package com.example.santa2019.Model;
 
 public class Ring {
-    public String id;
-    public String name, drution;
+    public int id;
+    public int mp3;
+    public String title;
+    private int type;
 
-    public Ring(String imageId, String name, String drution) {
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public Ring(int id, int mp3, String title) {
         this.id = id;
-        this.name = name;
-        this.drution = drution;
+        this.mp3 = mp3;
+        this.title = title;
     }
 
-    public Ring(String id) {
-        this.id = id;
+    public String getTitle() {
+        return title;
     }
 
-    public Ring() {
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String id() {
+    public int getId() {
         return id;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getMp3() {
+        return mp3;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDrution() {
-        return drution;
-    }
-
-    public void setDrution(String drution) {
-        this.drution = drution;
+    public void setMp3(int mp3) {
+        this.mp3 = mp3;
     }
 }
+
+
+
+
 
 

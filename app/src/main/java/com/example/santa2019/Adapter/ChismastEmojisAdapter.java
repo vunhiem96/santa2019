@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.santa2019.Model.Image;
 import com.example.santa2019.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +50,7 @@ public class ChismastEmojisAdapter extends RecyclerView.Adapter<ChismastEmojisAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
     Image image = data.get(position);
-    holder.imgEmoji.setImageResource(image.getId());
+        Picasso.with(context).load(image.getId()).into(holder.imgEmoji);
     holder.itemView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {

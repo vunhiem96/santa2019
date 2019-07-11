@@ -4,47 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RingTone"
+    android:background="@drawable/bg_ring_tone"
     android:orientation="vertical"
-    android:background="@drawable/nenhome">
+    tools:context=".RingToneActivity">
+
     <RelativeLayout
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
         <ImageView
-            android:layout_marginLeft="10dp"
             android:id="@+id/img_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/back"/>
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back" />
+
         <TextView
-            android:layout_centerHorizontal="true"
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="Ringtones"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Ringtones"
+            android:textColor="#FFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
+
     <View
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#3F51B5"/>
-    <android.support.design.widget.TabLayout
+        android:layout_marginTop="10dp"
+        android:background="#3F51B5" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_marginTop="5dp"
+        app:tabIndicatorColor="#FF9800"
+        app:tabTextColor="@color/select"
+        app:tabSelectedTextColor="@color/unselect"
         android:id="@+id/tabs_ringtune"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        app:tabMode="fixed"
-        app:tabGravity="fill"/>
-    <android.support.v4.view.ViewPager
+        android:layout_marginHorizontal="40dp"
+        app:tabIndicatorHeight="0dp"
+        app:tabBackground="@drawable/tab_color_selector"
+        app:tabGravity="fill"
+        app:tabMode="fixed" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#fff" />
+
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager_ringtune"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="2dp"
         android:layout_weight="1"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
-
-
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
 </LinearLayout>

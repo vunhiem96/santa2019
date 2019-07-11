@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,6 +49,8 @@ public class EmojisFragment extends Fragment {
         position = getArguments().getInt(ARG_POSITION);
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.emojis_fragment, container, false);
@@ -62,21 +65,22 @@ public class EmojisFragment extends Fragment {
             title = "all";
             getDataChristmasEmoji(title);
 
+
         } else if (position == 1) {
             title = "action";
-            getDataChristmasHats(title);
+            getDataChrismastSanta(title);
 
         } else if (position == 2) {
             title = "best";
-            getDataChrismastSanta(title);
+            getDataGifts(title);
 
         } else if (position == 3) {
             title = "outfit";
-            getDataGifts(title);
+            getDataSanta(title);
 
         } else if (position == 4) {
             title = "outfit";
-            getDataSanta(title);
+            getDataBalls(title);
 
         }else if (position == 5) {
                 title = "outfit";
@@ -89,13 +93,14 @@ public class EmojisFragment extends Fragment {
             getDataBells(title);
         } else {
             title = "tool";
-            getDataBalls(title);
+            getDataChristmasHats(title);
         }
     }
 
     private void getDataBalls(String title) {
         for (int i = 1; i <= 27; i++) {
-            data.add(new Image(R.drawable.christmas_bells_ + i));
+            data.add(new Image(R.drawable.christmas_balls_ + i));
+
         }
         ConfigRV();
     }
@@ -139,13 +144,15 @@ public class EmojisFragment extends Fragment {
     private void getDataChrismastSanta(String title) {
         for (int i = 1; i <= 39; i++) {
             data.add(new Image(R.drawable.christmas_santa_ + i));
+            //39
         }
         ConfigRV();
     }
 
 
     private void getDataChristmasEmoji(String title) {
-        for (int i = 1; i <= 49; i++) {
+        for (int i = 1; i <= 30; i++) {
+            //30
             data.add(new Image(R.drawable.christmas_emoji_ + i));
         }
         ConfigRV();
@@ -153,6 +160,7 @@ public class EmojisFragment extends Fragment {
 
     private void getDataChristmasHats(String title) {
         for (int i = 1; i <= 33; i++) {
+            //33
             data.add(new Image(R.drawable.christmas_hats_ + i));
             ConfigRV();
         }
@@ -160,21 +168,24 @@ public class EmojisFragment extends Fragment {
     }
 
     private void ConfigRV() {
+        rvEmojis.setHasFixedSize(true);
+        adapter = new ChismastEmojisAdapter(data, getActivity());
+        rvEmojis.addItemDecoration(new DividerItemDecoration(getActivity(),
+                DividerItemDecoration.HORIZONTAL));
+
+        rvEmojis.addItemDecoration(new DividerItemDecoration(getActivity(),
+                DividerItemDecoration.VERTICAL));
         GridLayoutManager g = new GridLayoutManager(getActivity(), 4);
         rvEmojis.setLayoutManager(g);
-        adapter = new ChismastEmojisAdapter(data, getActivity());
+
         rvEmojis.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-        rvEmojis.setHasFixedSize(true);
+
         rvEmojis.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         rvEmojis.setItemViewCacheSize(20);
         rvEmojis.setDrawingCacheEnabled(true);
-
-
-
     }
-
-    }
+}
 
 
 

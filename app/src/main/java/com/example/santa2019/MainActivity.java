@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    RelativeLayout rlRingtone, rlEmojis;
+    RelativeLayout rlRingtone, rlEmojis, rlWallpaper, rlCallSanta;
     TextView tvDay, tvHoursMinutes, tvSencond;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private void checkAndRequestPermissions() {
         String[] permissions = new String[]{
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_SETTINGS,
         };
         List<String> listPermissionsNeeded = new ArrayList<>();
         for (String permission : permissions) {
@@ -89,11 +90,21 @@ public class MainActivity extends AppCompatActivity {
         tvSencond = (TextView) findViewById(R.id.tv_second_countdown);
         rlRingtone = (RelativeLayout) findViewById(R.id.rl_ringtone);
         rlEmojis = (RelativeLayout) findViewById(R.id.rl_emojis);
+        rlWallpaper = (RelativeLayout) findViewById(R.id.rl_wallpaper);
+        rlCallSanta = (RelativeLayout) findViewById(R.id.rl_call_satnta);
+
+        rlCallSanta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CallSanta.class);
+                startActivity(intent);
+            }
+        });
 
         rlRingtone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RingTone.class);
+                Intent intent = new Intent(MainActivity.this, RingToneActivity.class);
                 startActivity(intent);
             }
         });
@@ -101,7 +112,15 @@ public class MainActivity extends AppCompatActivity {
         rlEmojis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Emojis.class);
+                Intent intent = new Intent(MainActivity.this, EmojisActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rlWallpaper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WallpaperActivity.class);
                 startActivity(intent);
             }
         });

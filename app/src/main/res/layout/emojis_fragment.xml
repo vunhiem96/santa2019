@@ -6,12 +6,16 @@
     tools:context=".Fragment.EmojisFragment"
     >
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank fragment layout --><FrameLayout
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
-        android:background="#F00"
+        android:background="#FFFF"
         android:id="@+id/rv_emojis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </androidx.recyclerview.widget.RecyclerView>
+</FrameLayout>
 
 </LinearLayout>

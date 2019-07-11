@@ -89,6 +89,7 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
+                    android:id="@+id/rl_wallpaper"
                     android:layout_width="140dp"
                     android:layout_height="70dp"
                     android:layout_marginHorizontal="10dp"
@@ -119,6 +120,7 @@
                     android:id="@+id/rl_emojis"
                     android:layout_width="140dp"
                     android:layout_height="70dp"
+                    android:layout_alignParentTop="true"
                     android:layout_marginHorizontal="10dp"
                     android:background="@drawable/nenemoji">
 
@@ -143,18 +145,20 @@
 
                 </RelativeLayout>
 
+
                 <RelativeLayout
+                    android:id="@+id/rl_setting"
                     android:layout_width="140dp"
                     android:layout_height="70dp"
                     android:layout_marginHorizontal="10dp"
                     android:background="@drawable/nenchat">
 
                     <TextView
-                        android:id="@+id/tv_title1"
+                        android:id="@+id/tv_title9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="Chat"
+                        android:text="Setting"
                         android:textColor="#F8F6F6"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -162,13 +166,14 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_below="@+id/tv_title1"
+                        android:layout_below="@+id/tv_title9"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="15dp"
-                        android:src="@drawable/icon_chat" />
+                        android:src="@drawable/setting" />
 
 
                 </RelativeLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -178,6 +183,7 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
+                    android:id="@+id/rl_call_satnta"
                     android:layout_width="140dp"
                     android:layout_height="70dp"
                     android:layout_marginHorizontal="10dp"
@@ -188,7 +194,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="Video Call"
+                        android:text="Call Santa"
                         android:textColor="#F8F6F6"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -204,37 +210,13 @@
 
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:layout_width="140dp"
-                    android:layout_height="70dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@drawable/nengetcall">
 
-                    <TextView
-                        android:id="@+id/tv_title4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Get Call"
-                        android:textColor="#F8F6F6"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_below="@+id/tv_title4"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="15dp"
-                        android:src="@drawable/ic_call" />
-
-
-                </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/rl_ringtone"
                     android:layout_width="140dp"
                     android:layout_height="70dp"
+                    android:layout_alignParentTop="true"
                     android:layout_marginHorizontal="10dp"
                     android:background="@drawable/nenring">
 
