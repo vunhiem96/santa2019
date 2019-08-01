@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:text="189 Days"
+                    android:text="Chúc mừng"
                     android:textColor="#f00"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -51,7 +51,7 @@
                     android:layout_below="@id/tv_countdown_day"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:text="10 hours, 11 minutes"
+                    android:text="Giáng Sinh"
                     android:textColor="#f00"
                     android:textSize="23sp" />
 
@@ -158,7 +158,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="Setting"
+                        android:text="Santa"
                         android:textColor="#F8F6F6"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -169,7 +169,7 @@
                         android:layout_below="@+id/tv_title9"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="15dp"
-                        android:src="@drawable/setting" />
+                        android:src="@drawable/christmas_santa_1" />
 
 
                 </RelativeLayout>
@@ -205,11 +205,10 @@
                         android:layout_below="@+id/tv_title3"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="15dp"
-                        android:src="@drawable/icon_videocall" />
+                        android:src="@drawable/call" />
 
 
                 </RelativeLayout>
-
 
 
                 <RelativeLayout

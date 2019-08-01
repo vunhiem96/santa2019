@@ -6,15 +6,19 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:configChanges="orientation|keyboardHidden"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/nhiem"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InCallStanta"></activity>
+        <activity android:name=".SantaGo"></activity>
+        <activity android:name=".DemActivity" />
+        <activity android:name=".VideoSanta" />
+        <activity android:name=".InCallStanta" />
         <activity android:name=".CallSanta" />
         <activity android:name=".WallpaperActivity" />
         <activity android:name=".SetWallpaperActivity" />

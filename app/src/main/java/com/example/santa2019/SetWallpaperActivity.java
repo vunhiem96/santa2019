@@ -49,7 +49,7 @@ import butterknife.OnClick;
 
 public class SetWallpaperActivity extends AppCompatActivity {
     DatabaseHandler db;
-    int id,name;
+    int id;
     Boolean  isLike = false;
 
     @BindView(R.id.imgDemoImage)
@@ -69,7 +69,7 @@ public class SetWallpaperActivity extends AppCompatActivity {
     int counter=1;
     @BindView(R.id.View)
     RelativeLayout view;
-    ArrayList<WallpaperFavorites> contacts;
+    ArrayList<Image> contacts;
 
     @OnClick(R.id.btnBack) void back() {
        finish();
@@ -174,11 +174,11 @@ public class SetWallpaperActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btndislike) void favorite() {
-        contacts = new ArrayList<WallpaperFavorites>(db.getAllContacts());
+        contacts = new ArrayList<Image>(db.getAllContacts());
         if (isLike){
             for (int i=0 ;i<contacts.size();i++){
-                if (contacts.get(i).getName()==name){
-                    db.deleteContact(name);
+                if (contacts.get(i).getId()==id){
+                    db.deleteContact(id);
                     imgDislike.setBackgroundResource(R.drawable.dislike);
                     isLike = false;
                 }
@@ -186,7 +186,7 @@ public class SetWallpaperActivity extends AppCompatActivity {
 
         }
         else {
-            db.addContacts(new WallpaperFavorites(id,name));
+            db.addContacts(new Image(id));
             imgDislike.setBackgroundResource(R.drawable.like);
             isLike = true;
         }
@@ -204,10 +204,10 @@ public class SetWallpaperActivity extends AppCompatActivity {
     }
     private void getDada() {
         Bundle bundle = getIntent().getExtras();
-        name = bundle.getInt("key");
+        id= bundle.getInt("key");
 
         Picasso.with(this)
-                .load(name)
+                .load(id)
                 .fit().centerCrop()
                 .into(imgDemoImage);
     }
@@ -215,8 +215,8 @@ public class SetWallpaperActivity extends AppCompatActivity {
         contacts = new ArrayList<>(db.getAllContacts());
         Log.e("thanhdb",contacts.size()+"");
         for (int i=0 ;i<contacts.size();i++){
-            if (contacts.get(i).getName()==name){
-                db.deleteContact(name);
+            if (contacts.get(i).getId()==id){
+                db.deleteContact(id);
                 imgDislike.setBackgroundResource(R.drawable.dislike);
                 isLike = false;
             }

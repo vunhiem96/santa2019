@@ -6,6 +6,7 @@ public class Ring {
     public String title;
     private int type;
 
+
     public int getType() {
         return type;
     }

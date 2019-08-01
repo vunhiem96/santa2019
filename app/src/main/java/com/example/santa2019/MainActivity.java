@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    RelativeLayout rlRingtone, rlEmojis, rlWallpaper, rlCallSanta;
+    RelativeLayout rlRingtone, rlEmojis, rlWallpaper, rlCallSanta, rlSetting;
     TextView tvDay, tvHoursMinutes, tvSencond;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         String[] permissions = new String[]{
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_SETTINGS,
+                Manifest.permission.INTERNET,
         };
         List<String> listPermissionsNeeded = new ArrayList<>();
         for (String permission : permissions) {
@@ -85,13 +86,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
+        tvSencond = (TextView) findViewById(R.id.tv_second_countdown);
         tvDay = (TextView) findViewById(R.id.tv_countdown_day);
         tvHoursMinutes = (TextView) findViewById(R.id.tv_hours_countdown);
-        tvSencond = (TextView) findViewById(R.id.tv_second_countdown);
         rlRingtone = (RelativeLayout) findViewById(R.id.rl_ringtone);
         rlEmojis = (RelativeLayout) findViewById(R.id.rl_emojis);
         rlWallpaper = (RelativeLayout) findViewById(R.id.rl_wallpaper);
         rlCallSanta = (RelativeLayout) findViewById(R.id.rl_call_satnta);
+        rlSetting = (RelativeLayout) findViewById(R.id.rl_setting);
 
         rlCallSanta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +123,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, WallpaperActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rlSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DemActivity.class);
                 startActivity(intent);
             }
         });

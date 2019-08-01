@@ -22,12 +22,8 @@ import java.util.List;
 public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.WallpaperViewHoler> {
     public Context context;
     public List<Image> data;
-    public ProgressBar progressBar;
-    private final int VIEW_TYPE_ITEM=0,VIEW_TYPE_LOADING=1;
-    ILoadMore loadMore;
-    boolean isLoading;
-    int visibleThreshold=5;
-    int lastVisibleItem,totalItemCount;
+
+
 
 
     public WallpaperAdapter(Context context, List<Image> data) {
@@ -68,14 +64,5 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
             imgWallpaper = itemView.findViewById(R.id.imgWallpaper);
         }
     }
-    class LoadingViewHolder extends RecyclerView.ViewHolder
-    {
 
-        public ProgressBar progressBar;
-
-        public LoadingViewHolder(View itemView) {
-            super(itemView);
-            progressBar = (ProgressBar)itemView.findViewById(R.id.progressBar);
-        }
-    }
 }
