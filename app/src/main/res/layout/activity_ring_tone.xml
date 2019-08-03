@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_ring_tone"
     android:orientation="vertical"
-    tools:context=".RingToneActivity">
+    tools:context=".emoji.RingToneActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

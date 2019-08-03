@@ -1,4 +1,4 @@
-package com.example.santa2019;
+package com.example.santa2019.wallpaper;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.example.santa2019.Adapter.WallpaperAdapter;
 import com.example.santa2019.Model.Image;
+import com.example.santa2019.R;
 
 import java.util.ArrayList;
 

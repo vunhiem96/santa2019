@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:configChanges="orientation|keyboardHidden"
         android:allowBackup="true"
@@ -15,15 +15,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SantaGo"></activity>
-        <activity android:name=".DemActivity" />
+        <activity android:name=".cowndown.SantaGo"></activity>
+        <activity android:name=".cowndown.DemActivity" />
         <activity android:name=".VideoSanta" />
         <activity android:name=".InCallStanta" />
         <activity android:name=".CallSanta" />
-        <activity android:name=".WallpaperActivity" />
+        <activity android:name=".wallpaper.WallpaperActivity" />
         <activity android:name=".SetWallpaperActivity" />
         <activity android:name=".EmojisActivity" />
-        <activity android:name=".RingToneActivity" />
+        <activity android:name=".emoji.RingToneActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

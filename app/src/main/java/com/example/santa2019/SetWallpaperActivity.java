@@ -174,19 +174,19 @@ public class SetWallpaperActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btndislike) void favorite() {
-        contacts = new ArrayList<Image>(db.getAllContacts());
+//        contacts = new ArrayList<Image>(db.getAllContacts());
         if (isLike){
-            for (int i=0 ;i<contacts.size();i++){
-                if (contacts.get(i).getId()==id){
-                    db.deleteContact(id);
+//            for (int i=0 ;i<contacts.size();i++){
+//                if (contacts.get(i).getId()==id){
+//                    db.deleteContact(id);
                     imgDislike.setBackgroundResource(R.drawable.dislike);
                     isLike = false;
                 }
-            }
 
-        }
+
+
         else {
-            db.addContacts(new Image(id));
+//            db.addContacts(new Image(id));
             imgDislike.setBackgroundResource(R.drawable.like);
             isLike = true;
         }
@@ -211,17 +211,17 @@ public class SetWallpaperActivity extends AppCompatActivity {
                 .fit().centerCrop()
                 .into(imgDemoImage);
     }
-    private void getallDb() {
-        contacts = new ArrayList<>(db.getAllContacts());
-        Log.e("thanhdb",contacts.size()+"");
-        for (int i=0 ;i<contacts.size();i++){
-            if (contacts.get(i).getId()==id){
-                db.deleteContact(id);
-                imgDislike.setBackgroundResource(R.drawable.dislike);
-                isLike = false;
-            }
-        }
-    }
+//    private void getallDb() {
+//        contacts = new ArrayList<>(db.getAllContacts());
+//        Log.e("thanhdb",contacts.size()+"");
+//        for (int i=0 ;i<contacts.size();i++){
+//            if (contacts.get(i).getId()==id){
+//                db.deleteContact(id);
+//                imgDislike.setBackgroundResource(R.drawable.dislike);
+//                isLike = false;
+//            }
+//        }
+//    }
 
 
 }

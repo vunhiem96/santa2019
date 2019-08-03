@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InCallStanta"
     android:id="@+id/ln_call"
-    android:orientation="vertical"
     android:background="#fefefe">
-
+<FrameLayout
+    android:id="@+id/fl_incall"
+    android:layout_width="match_parent"
+    android:layout_height="450dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ImageView
         android:src="@drawable/image1"
         android:scaleType="fitXY"
@@ -17,8 +22,20 @@
         android:layout_height="450dp"
          />
     <LinearLayout
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/cPreview"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
+    <LinearLayout
+        android:layout_below="@+id/fl_incall"
         android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2">
@@ -31,10 +48,10 @@
     android:src="@drawable/icon_cance_call"/>
     <ImageView
        android:layout_weight="1"
-        android:id="@+id/video_call"
+        android:id="@+id/swicthcame"
         android:layout_gravity="center"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:src="@drawable/icon_video"/>
+        android:src="@drawable/icon_switchcam"/>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

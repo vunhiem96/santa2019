@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import android.widget.Toast
 import com.example.santa2019.Model.Image
+import com.example.santa2019.Model.Ring
+import com.example.santa2019.Model.RingFa
 
 import com.example.santa2019.Model.WallpaperFavorites
 
@@ -21,18 +23,18 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     // Select All Query
     // looping through all rows and adding to list
     // return contact list
-    val allContacts: List<Image>
+    val allContacts: List<RingFa>
         get() {
-            val contactList = ArrayList<Image>()
+            val contactList = ArrayList<RingFa>()
             val selectQuery = "SELECT  * FROM $TABLE_FAVOURITE"
 
             val db = this.writableDatabase
             val cursor = db.rawQuery(selectQuery, null)
             if (cursor.moveToFirst()) {
                 do {
-                    val contact = Image()
+                    val contact = RingFa()
                     contact.id = Integer.parseInt(cursor.getString(0))
-                    contactList.add(contact)
+                    contact.title = cursor.getString(1)
                 } while (cursor.moveToNext())
             }
             return contactList
@@ -41,7 +43,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     //Create tables
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_TABLE_CONTACTS = ("CREATE TABLE " + TABLE_FAVOURITE + "("
-                + KEY_ID + " INTEGER PRIMARY KEY );")
+                + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, $KEY_NAME TEXT );")
         db.execSQL(CREATE_TABLE_CONTACTS)
     }
 
@@ -53,11 +55,11 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         onCreate(db)
     }
 
-    fun addContacts(fv: Image) {
+    fun addContacts(fv: RingFa) {
         val db = this.readableDatabase
         val values = ContentValues()
 
-        values.put(KEY_NAME, fv.id)
+        values.put(KEY_NAME, fv.title)
 
 
         db.insert(TABLE_FAVOURITE, null, values)
@@ -85,7 +87,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         private val DATABASE_VERSION = 1
 
         // Database Name
-        private val DATABASE_NAME = "FavouriteManager"
+        private val DATABASE_NAME = "FavouriteManager1"
 
         // Contacts table name
         private val TABLE_FAVOURITE = "Favouriter"

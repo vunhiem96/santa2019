@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,20 +18,29 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.santa2019.Model.Image;
 import com.example.santa2019.Model.Ring;
+import com.example.santa2019.Model.RingFa;
 import com.example.santa2019.R;
+import com.example.santa2019.db.DatabaseHandler;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.AudioItemsViewHolder>  {
-
+    ArrayList<RingFa> contacts;
   Ringtone ringTone;
+  DatabaseHandler db;
     private MediaPlayer mediaPlayer;
 
     private Handler uiUpdateHandler;
@@ -98,9 +108,10 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.Audi
                                 context.startActivity(Intent.createChooser(share, ""));
                                 break;
                             case R.id.nav_ring_phone:
-
+                                Toast.makeText(context, "Chức năng chuẩn bị phát triển", Toast.LENGTH_LONG).show();
                                 break;
                             case R.id.nav_like:
+                                Toast.makeText(context, "Chức năng đang phát triển", Toast.LENGTH_LONG).show();
 
                                 break;
                         }

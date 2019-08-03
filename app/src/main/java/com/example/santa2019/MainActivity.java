@@ -14,6 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.santa2019.cowndown.DemActivity;
+import com.example.santa2019.emoji.RingToneActivity;
+import com.example.santa2019.wallpaper.WallpaperActivity;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_SETTINGS,
                 Manifest.permission.INTERNET,
+                Manifest.permission.CAMERA
         };
         List<String> listPermissionsNeeded = new ArrayList<>();
         for (String permission : permissions) {

@@ -15,6 +15,7 @@ import com.squareup.picasso.Picasso;
 public class CallSanta extends AppCompatActivity {
    MediaPlayer mediaPlayer;
   ImageView btnCan;
+    Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,36 +24,40 @@ public class CallSanta extends AppCompatActivity {
         btnCan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               stopHandler();
                 finish();
             }
         });
 
         mediaPlayer = MediaPlayer.create(CallSanta.this, R.raw.tut);
         mediaPlayer.start();
-        Handler handler = new Handler();
+        handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 screenRouter();
             }
-        }, 13000);
+        }, 10000);
     }
-
+    public void stopHandler() {
+        handler.removeMessages(0);
+    }
     @Override
     protected void onPause() {
+        stopHandler();
         mediaPlayer.stop();
         super.onPause();
     }
 
     @Override
     protected void onStop() {
-        mediaPlayer.stop();
+
         super.onStop();
     }
 
     @Override
     protected void onDestroy() {
-        mediaPlayer.stop();
+
         super.onDestroy();
     }
 

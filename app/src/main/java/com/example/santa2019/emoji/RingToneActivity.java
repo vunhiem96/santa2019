@@ -1,4 +1,4 @@
-package com.example.santa2019;
+package com.example.santa2019.emoji;
 
 
 import android.content.Context;
@@ -19,6 +19,7 @@ import com.example.santa2019.Adapter.RingViewPagerAdapter;
 import com.example.santa2019.Fragment.RingToneFavorites;
 import com.example.santa2019.Fragment.RingToneFragment;
 import com.example.santa2019.Model.Ring;
+import com.example.santa2019.R;
 import com.google.android.material.tabs.TabLayout;
 
 import java.lang.reflect.Field;
